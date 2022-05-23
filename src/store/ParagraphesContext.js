@@ -40,6 +40,8 @@ function paragraphesReducer(state, action){
             return stateAfterDown
         case 'DELETE':
             return state.filter((paragraphe)=> paragraphe.id !== action.payload)
+        case 'SET':
+            return action.payload
         default:
             break;
     }

@@ -4,11 +4,14 @@ import { Container, Col, Row, Card, Button } from 'react-bootstrap'
 
 import FormAddNotion from '../Components/AddNotion/FormAddNotion'
 import DisplayNotion from '../Components/DisplayNotion/DisplayNotion'
+
 import { ParagraphesContext } from '../store/ParagraphesContext'
+import { AuthContext } from '../store/AuthContext'
 
 const AddNotionScreen = () => {
 
   const paragraphesCtx = useContext(ParagraphesContext)
+  const token = useContext(AuthContext).token
 
   const [notion, setNotion] = useState({
     title: '',
@@ -37,8 +40,9 @@ const AddNotionScreen = () => {
    */
   async function postNotion(event){
     event.preventDefault()
-    await axios.post('https://etpchu-default-rtdb.firebaseio.com/competences.json', notion)
+    await axios.post('https://etpchu-default-rtdb.firebaseio.com/competences.json?auth='+token, notion)
     setNotion({title:'', paragraphes: []})
+    paragraphesCtx.setParagraphes([])
   }
 
   return (

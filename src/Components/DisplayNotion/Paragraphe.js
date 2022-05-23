@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import {Card, Row, Col, ButtonGroup, Button} from 'react-bootstrap'
+import {Card, Row, Col, ButtonGroup} from 'react-bootstrap'
 
 import { ParagraphesContext } from '../../store/ParagraphesContext'
 import ButtonDown from '../ui/ButtonDown'
