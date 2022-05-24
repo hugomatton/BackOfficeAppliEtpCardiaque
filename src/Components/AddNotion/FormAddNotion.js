@@ -3,7 +3,7 @@ import { Form } from 'react-bootstrap'
 
 import FormAddParagraphe from './FormAddParagraphe'
 
-const FormAddNotion = ({handleChange, setNotion, notion}) => {
+const FormAddNotion = ({handleChange, notion}) => {
 
 
     return (

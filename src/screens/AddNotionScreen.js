@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Container, Col, Row, Card, Button } from 'react-bootstrap'
 
 import FormAddNotion from '../Components/AddNotion/FormAddNotion'
-import DisplayNotion from '../Components/DisplayNotion/DisplayNotion'
+import DisplayNotion from '../Components/AddNotion/DisplayNotion/DisplayNotion'
 
 import { ParagraphesContext } from '../store/ParagraphesContext'
 import { AuthContext } from '../store/AuthContext'

@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import {Card, Row, Col, ButtonGroup} from 'react-bootstrap'
 
-import { ParagraphesContext } from '../../store/ParagraphesContext'
-import ButtonDown from '../ui/ButtonDown'
-import ButtonTrash from '../ui/ButtonTrash'
-import ButtonUp from '../ui/ButtonUp'
+import { ParagraphesContext } from '../../../store/ParagraphesContext'
+import ButtonDown from '../../ui/ButtonDown'
+import ButtonTrash from '../../ui/ButtonTrash'
+import ButtonUp from '../../ui/ButtonUp'
 
 const Paragraphe = ({paragraphe}) => {
 
@@ -18,8 +18,8 @@ const Paragraphe = ({paragraphe}) => {
             <p>{paragraphe.text}</p>
             <p>Url de l'image d'illustration : {paragraphe.imageUrl}</p>
           </Col>
-          <Col  md={2} className='d-flex justify-content-end '>
-            <ButtonGroup vertical>
+          <Col  md={2} className='d-flex justify-content-end align-items-top'>
+            <ButtonGroup vertical className='h-50'>
                 <ButtonUp onClick={()=>{paragraphesCtx.upParagraphe(paragraphe)}}/>
                 <ButtonTrash onClick={()=>{paragraphesCtx.deleteParagraphe(paragraphe.id)}}/>
                 <ButtonDown onClick={()=>{paragraphesCtx.downParagraphe(paragraphe)}}/>

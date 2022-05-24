@@ -7,7 +7,6 @@ const FormAddParagraphe = () => {
     const paragraphesCtx = useContext(ParagraphesContext)
 
     const [paragraphe, setParagraphe] = useState({
-        id: Math.random().toString() + Math.random().toString(),
         subtitle: '',
         text: '',
         imageUrl: ''
@@ -24,7 +23,7 @@ const FormAddParagraphe = () => {
         //TODO --> check valid data
 
         //on met à jour le contexte
-        paragraphesCtx.addParagraphe(paragraphe)
+        paragraphesCtx.addParagraphe({...paragraphe, id: Math.random().toString() + Math.random().toString()})
         //on met à jour l'objet notion
         setParagraphe({subtitle: '', text: '', imageUrl: ''})
     }

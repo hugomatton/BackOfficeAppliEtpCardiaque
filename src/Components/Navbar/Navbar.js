@@ -1,24 +1,24 @@
 import React, {useContext} from 'react'
 import { Navbar, Nav, Container } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 
 import { AuthContext } from '../../store/AuthContext'
+import NavBrand from './NavBrand'
 
 const MyNavbar = () => {
 
     const authCtx = useContext(AuthContext)
 
+    const navigation = useNavigate()
+
     return (
         <>
-            <Navbar bg="primary" variant="dark">
-                <Container>
-                <Navbar.Brand href="#home">Education thérapeuthique pour l'insuffisance cardiaque</Navbar.Brand>
-                </Container>
-            </Navbar>
+            <NavBrand/>
             <Navbar sticky="top" bg="primary" variant="dark">
                 <Container>
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Ajouter notions</Nav.Link>
-                        <Nav.Link href="#features">Editer notions</Nav.Link>
+                        <Nav.Link onClick={()=>{navigation('/addNotion')}}>Ajouter notions</Nav.Link>
+                        <Nav.Link onClick={()=>{navigation('/editNotion')}}>Editer notions</Nav.Link>
                         <Nav.Link onClick={()=>{authCtx.logout()}} href="#">Logout</Nav.Link>
                     </Nav>
                 </Container>

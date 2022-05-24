@@ -22,7 +22,9 @@ function AuthContextProvider({children}){
     }
 
     useEffect(()=>{
-        authenticate(localStorage.getItem('token'))
+        if(localStorage.getItem('token') !== null){
+            authenticate(localStorage.getItem('token'))
+        }
     },[])
 
     const value = {
